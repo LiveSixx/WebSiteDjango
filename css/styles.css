@@ -1,0 +1,30 @@
+body{
+    
+    margin:20px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    color: black;
+}
+*,
+*:before,
+*:after{
+box-sizing: border-box;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+}
+.container{
+    width: 100%;
+    max-width: 1200px;
+    margin:0 auto;
+}
+
+.intro{
+    width: 100%;
+    height: 10vh;
+    background: rgb(228, 228, 228);
+    background-size: cover;
+    -webkit-background-size: cover;
+
+}
