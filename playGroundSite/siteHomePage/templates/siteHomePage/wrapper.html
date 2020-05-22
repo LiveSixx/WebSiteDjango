@@ -1,31 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Заголовок страницы</title>
-  {% load static %}
-  <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
-  <link rel="stylesheet" href="{% static 'css/fontawesome.min.css' %}">
-  <link rel="stylesheet" href="{% static 'css/homePage.css' %}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>{% block title %}{% endblock %}</title>
+    {% load static %}
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/normalize.css' %}">
+    <link rel="stylesheet" href="{% static 'css/homePage.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" type="text/css">
+    <link rel="shortcut icon" href="{% static 'siteHomePage/images/favicon.png' %}" type="image/png">
+    <script src="https://kit.fontawesome.com/c9bb692bee.js" crossorigin="anonymous"></script>
 </head>
+
 <body>
-    <div class="jumbotron">
-        <div class="container">
-          {% block content %}
-          {% endblock %}
-          <p>
-            <a href="/" class="btn btn-success btn-lg">Главная страница</a>
-            <a href="/news" class="btn btn-primary btn-lg">Новости &raquo;</a>
-            <a href="/contact" class="btn btn-info btn-lg">Контакты</a>
-          </p>
+    <header class="header">
+        <div class="header__top">
         </div>
-      </div>
-      <div class="container">
-        <img src="{% static 'siteHomePage/image/carBG.jpg' %}" class="img-thumbnail">
-        <hr>
-        &copy; Все права защищены 2018
-      </div>
+        <div class="header__content">
+            <div class="container-custom">
+                <div class="header__content_flex">
+                    <div class="header__logo">
+                        <a href="/"><img src="{% static 'siteHomePage\images\logo.png' %}"></a>
+                    </div>
+                    <div class="header-nav-button-align">
+                        <nav class="header_menu">
+                            <ul>
+                                <li><a href="/"><i
+                      class="fas fa-home fa-xs {% if request.path == '/' %}active{% endif %}"></i>ГЛАВНАЯ</a></li>
+                                <li><a href="/homepage"><i
+                      class="fas fa-bars fa-xs {% if request.path == '/homepage/' %}active{% endif %}"></i>НАШИ
+                    УСЛУГИ</a></li>
+                                <li><a href="#"><i class="fas fa-info-circle fa-xs {% if request.path == '#' %}active{% endif %}"></i>ОБ
+                    ОРГАНИЗАЦИИ</a></li>
+                                <li><a href="#"><i
+                      class="fas fa-comments fa-xs {% if request.path == '#' %}active{% endif %}"></i></i>ОТЗЫВЫ</a>
+                                </li>
+                            </ul>
+                        </nav>
+                        <div class="header_review_btn">
+                            <a href="#" class="review_btn">Оставить отзыв</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="header__bottom">
+            <div class="container-custom">
+                <div class="header_info_content">
+                    <div class="header_social">
+                        <a class="header__facebook" href="https://vk.com/livefx"><i class="fab fa-facebook-square fa-2x"></i></a>
+                    </div>
+                    <div class="header_separator">
+
+                    </div>
+                    <div class="header_info">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="goog-toolbar-separator" id="zoomComboBoxSeparator" aria-disabled="true" role="separator" style="user-select: none;">&nbsp;</div>
+    {% block body %}{% endblock %}
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+
 </body>
+
 </html>
