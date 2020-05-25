@@ -20,28 +20,26 @@
         </div>
         <div class="header__content">
             <div class="container-custom">
-                <div class="header__content_flex">
-                    <div class="header__logo">
-                        <a href="/"><img src="{% static 'siteHomePage\images\logo.png' %}"></a>
-                    </div>
-                    <div class="header-nav-button-align">
-                        <nav class="header_menu">
-                            <ul>
-                                <li><a href="/"><i
+                <div class="header__logo">
+                    <a href="/"><img src="{% static 'siteHomePage\images\logo.png' %}"></a>
+                </div>
+                <div class="header-nav-button-align">
+                    <nav class="header_menu">
+                        <ul>
+                            <li><a href="/"><i
                       class="fas fa-home fa-xs {% if request.path == '/' %}active{% endif %}"></i>ГЛАВНАЯ</a></li>
-                                <li><a href="/homepage"><i
-                      class="fas fa-bars fa-xs {% if request.path == '/homepage/' %}active{% endif %}"></i>НАШИ
+                            <li><a href="#"><i
+                      class="fas fa-bars fa-xs {% if request.path == '#' %}active{% endif %}"></i>НАШИ
                     УСЛУГИ</a></li>
-                                <li><a href="#"><i class="fas fa-info-circle fa-xs {% if request.path == '#' %}active{% endif %}"></i>ОБ
+                            <li><a href="/services"><i class="fas fa-info-circle fa-xs {% if request.path == '/services/' %}active{% endif %}"></i>ОБ
                     ОРГАНИЗАЦИИ</a></li>
-                                <li><a href="#"><i
+                            <li><a href="#"><i
                       class="fas fa-comments fa-xs {% if request.path == '#' %}active{% endif %}"></i></i>ОТЗЫВЫ</a>
-                                </li>
-                            </ul>
-                        </nav>
-                        <div class="header_review_btn">
-                            <a href="#" class="review_btn">Оставить отзыв</a>
-                        </div>
+                            </li>
+                        </ul>
+                    </nav>
+                    <div class="header_review_btn">
+                        <a href="#" class="review_btn">Оставить отзыв</a>
                     </div>
                 </div>
             </div>
@@ -163,54 +161,75 @@
     </section>
     <footer class="footer">
         <div class="container-footer">
-            <div class="container__finder-inner">
-                <div class="finder__top">
-                    <div class="finder__title">
-                        <span>где и как нас найти</span>
+            <div class="container__footer-content">
+                <div class="footer__items">
+                    <div class="footer__item">
+
+                        <div class="footer__item-logo">
+                        </div>
+
                     </div>
+                    <div class="footer__item">
+                        <div class="footer_item-padding">
+                            <div class="footer__item-title">
+                                <span>Навигация</span>
+                            </div>
+
+                            <div class="footer__menu">
+                                <ul>
+                                    <li><a href="#" class="footer__item-link">Главная</a></li>
+                                    <li><a href="#" class="footer__item-link">Наши услуги</a></li>
+                                    <li><a href="#" class="footer__item-link">Об нас</a></li>
+                                    <li><a href="#" class="footer__item-link">Отзывы</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="footer__item">
+                        <div class="footer_item-padding">
+                            <div class="footer__item-title">
+                                <span>Другая информация </span>
+                            </div>
+
+                            <div class="footer__menu">
+                                <ul>
+                                    <li><a href="#" class="footer__item-link">Карта</a></li>
+                                    <li><a href="#" class="footer__item-link">Телефон</a></li>
+                                    <li><a href="#" class="footer__item-link">Соглашение</a></li>
+                                    <li><a href="#" class="footer__item-link">Смысл</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="footer__item">
+                        <div class="footer_item-padding">
+                            <div class="footer__item-title">
+                                <span>Мы в соц сетях</span>
+                            </div>
+
+                            <div class="footer__menu-social">
+                                <ul>
+                                    <li><a href="https://vk.com/feed" class="footer__item-link"><i class="fab fa-vk fa-2x"></i></a></li>
+                                    <li><a href="https://vk.com/feed" class="footer__item-link"><i class="fab fa-viber fa-2x"></i></a></li>
+                                    <li><a href="https://vk.com/feed" class="footer__item-link"><i class="fab fa-twitter fa-2x"></i></a></li>
+                                    <li><a href="https://vk.com/feed" class="footer__item-link"><i class="fab fa-facebook fa-2x"></i></a></li>
+                                    <li><a href="https://steamcommunity.com/id/LiveSixx/" class="footer__item-link"><i class="fab fa-steam fa-2x"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
-
-                <div class="finder__items">
-                    <div class="finder__item-padding">
-                        <div class="finder__items-line"></div>
-                        <div class="finder__item">
-                            <div class="finder__item-header">
-                                <div class="finder__item-title">
-                                    <span>Адрес нашего автосервиса</span>
-                                </div>
-                            </div>
-
-                            <div class="finder__item-text">
-
-                                <p><i class="fas fa-map-marker-alt fa-sm"></i>Ул. Ленина, 33</p>
-                            </div>
-                        </div>
-                        <div class="finder__item">
-                            <div class="finder__item-header">
-                                <div class="finder__item-title">
-                                    <span>Телефон</span>
-                                </div>
-                            </div>
-
-                            <div class="finder__item-text">
-                                <p><i class="fas fa-phone-alt fa-sm"></i>8-960-738-63-19</p>
-                            </div>
-                        </div>
-                        <div class="finder__item">
-                            <div class="finder__item-btn">
-                                <a href="#" class="finder__item-link">Форма обратной связи</a>
-                            </div>
-                        </div>
-                        <div class="finder__items-line"></div>
+                <div class="footer__line"></div>
+                <div class="footer__copyright">
+                    <div class="footer__copy">
+                        <span style="user-select: none;">Copyright <i class="far fa-copyright"></i> АвтоСервис 2020 Все права защищены</span>
                     </div>
-                    <div class=finder__point-map>
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2128.716610021613!2d40.950541316106296!3d57.75523584325449!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46ad502794ccb5ab%3A0x5254893fbc8338d0!2z0JrQvtGB0YLRgNC-0LzRgdC60L7QuSDRgtC10YXQvdC-0LvQvtCz0LjRh9C10YHQutC40Lkg0YLQtdGF0L3QuNC60YPQvA!5e0!3m2!1sru!2sru!4v1590353335521!5m2!1sru!2sru"
-                            width="550" height="320" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+                    <div class="footer__auth">
+                        <span style="user-select: none;">Разработка макета сайта и сайта: Васильев Артем</span>
                     </div>
                 </div>
             </div>
-
-        </div>
     </footer>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
