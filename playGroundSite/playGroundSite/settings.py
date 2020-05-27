@@ -31,6 +31,9 @@ ALLOWED_HOSTS = ['127.0.0.1', '.pythonanywhere.com', '192.168.2.101']
 # Application definition
 
 INSTALLED_APPS = [
+    'siteReviews',
+    'siteAbout',
+    'siteServices',
     'siteHomePage',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -41,7 +44,6 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
-    'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -120,3 +122,5 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
+SETTINGS_PATH = os.path.dirname(os.path.dirname(__file__))

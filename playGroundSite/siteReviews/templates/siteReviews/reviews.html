@@ -1,0 +1,87 @@
+{% extends "siteHomePage/wrapper.html" %} {% block title %}Автосервис - Отзывы{% endblock %} {% block body %} {% load static %}
+<section class="services-about">
+    <div class="container-services">
+        <div class="services__about">
+            <div class="services__about-title"><span>Отзывы</span>
+            </div>
+            <div class="reviews__about-line"></div>
+            <div class="services__about-text">
+                <p>Отзывы наших клиентов
+                </p>
+            </div>
+        </div>
+        <div class="reviews__info-items">
+            <div class="reviews__info-item-wrapper-blue">
+                <div class="reviews__info-item">
+                    <div class="reviews__info-item-title">
+                        <span>Андрей</span>
+                    </div>
+                    <div class="reviews__info-item-date">
+                        <span>дата 19.03.1999</span>
+                    </div>
+
+                </div>
+                <div class="reviews__about-line-separator"></div>
+                <div class="reviews__info-item-addon">
+                    <p>Обслуживаюсь в данном сервисе более 3х лет. Запчасти подбирают и доставляют быстро. К качеству ремонта вопросов никогда не возникало. Цена-качество на высоте. Так же в данном сервисе работает очень грамотный электрик, в 100% случаев
+                        определяет неисправность. Рекомендую!</p>
+                </div>
+            </div>
+            <div class="reviews__info-item-wrapper-blue">
+                <div class="reviews__info-item">
+                    <div class="reviews__info-item-title">
+                        <span>Максим</span>
+                    </div>
+                    <div class="reviews__info-item-date">
+                        <span>дата 19.03.2020</span>
+                    </div>
+
+                </div>
+                <div class="reviews__about-line-separator"></div>
+                <div class="reviews__info-item-addon">
+                    <p>Обслуживаюсь в данном сервисе более 3х лет.</p>
+                </div>
+            </div>
+            <div class="reviews__info-item-wrapper-blue">
+                <div class="reviews__info-item">
+                    <div class="reviews__info-item-title">
+                        <span>Андрей</span>
+                    </div>
+                    <div class="reviews__info-item-date">
+                        <span>дата 19.03.1999</span>
+                    </div>
+
+                </div>
+                <div class="reviews__about-line-separator"></div>
+                <div class="reviews__info-item-addon">
+                    <p>Обслуживаюсь в данном сервисе более 3х лет. Запчасти подбирают и доставляют быстро. К качеству ремонта вопросов никогда не возникало. Цена-качество на высоте. Так же в данном сервисе работает очень грамотный электрик, в 100% случаев
+                        определяет неисправность. Рекомендую!</p>
+                </div>
+            </div>
+        </div>
+</section>
+<section class="reviews__form">
+    <div class="container-services">
+        <div class="reviews__reviews-btn">
+            <button class="reviews__reviews-btn-link" type="button" data-toggle="modal" data-target="#reviewModal">Оставить отзыв</button>
+        </div>
+        <div class="reviews__form-content-align">
+            <form>
+                <div class="reviews__form-box-inner">
+                    <div class="reviews__form-box-title"><span>Оставить отзыв</span></div>
+                    <label>
+                            <input maxlength="45" type="text" placeholder="Имя">
+                        </label>
+                    <label>
+                            <input maxlength="45" type="text" placeholder="Почта">
+                        </label>
+                    <label>
+                            <textarea maxlength="250"  placeholder="Отзыв"></textarea>
+                        </label>
+                    <button class="feedback__form-box-btn" type="submit">Отправить</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+{% endblock %}

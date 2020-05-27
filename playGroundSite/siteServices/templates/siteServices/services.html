@@ -1,0 +1,66 @@
+{% extends "siteHomePage/wrapper.html" %} {% block title %}Автосервис - Наши услуги{% endblock %} {% block body %} {% load static %}
+<section class="services-about">
+    <div class="container-services">
+        <div class="services__about">
+            <div class="services__about-title"><span>Услуги автосервиса</span>
+            </div>
+            <div class="services__about-line"></div>
+            <div class="services__about-text">
+                <p>Ознакомьтесь с полным списком услуг ниже
+                </p>
+            </div>
+        </div>
+        <div class="services__info-items">
+            <div class="services__info-item-wrapper">
+                <div class="services__info-item">
+                    <a href="#">
+                        <div class="services__info-item-title">
+                            <span>Название услуги</span>
+                            <span>Подробнее <i class="fas fa-angle-double-right fa-sm"></i></span>
+                        </div>
+
+                    </a>
+                </div>
+                <div class="services__info-item-addon"><span>Дополнительная информация услуги</span>
+                </div>
+            </div>
+            <div class="services__info-item-wrapper">
+                <div class="services__info-item">
+                    <a href="#">
+                        <div class="services__info-item-title">
+                            <span>Название услуги</span>
+                            <span>Подробнее <i class="fas fa-angle-double-right fa-sm"></i></span>
+                        </div>
+
+                    </a>
+                </div>
+                <div class="services__info-item-addon"><span>Дополнительная информация услуги</span>
+                </div>
+            </div>
+        </div>
+</section>
+<section class="feedback__form">
+    <div class="container-services">
+        <div class="feedback__form-title">
+            <span>Есть вопросы?</span>
+        </div>
+        <div class="feedback__form-content-align">
+            <form>
+                <div class="feedback__form-box-inner">
+                    <div class="feedback__form-box-title"><span>Оставьте сообщение и мы с вами свяжемся</span></div>
+                    <label>
+                            <input maxlength="45" type="text" placeholder="ФИО">
+                        </label>
+                    <label>
+                            <input maxlength="45" type="text" placeholder="Контактный Телефон">
+                        </label>
+                    <label>
+                            <textarea maxlength="250"  placeholder="Вопрос (максимум 250 символов)"></textarea>
+                        </label>
+                    <button class="feedback__form-box-btn" type="submit">Отправить</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+{% endblock %}

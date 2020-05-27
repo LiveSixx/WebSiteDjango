@@ -1,0 +1,27 @@
+{% block content %}
+<div class="modal fade" id="reviewModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="container-services-modal">
+                <div class="reviews__form-content-align-modal">
+                    <form>
+                        <div class="reviews__form-box-inner">
+                            <div class="reviews__form-box-title"><span>Оставить отзыв</span></div>
+                            <label>
+                                <input maxlength="45" type="text" placeholder="Имя">
+                            </label>
+                            <label>
+                                <input maxlength="45" type="text" placeholder="Почта">
+                            </label>
+                            <label>
+                                <textarea maxlength="250" placeholder="Отзыв"></textarea>
+                            </label>
+                            <button class="feedback__form-box-btn" type="submit">Отправить</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
