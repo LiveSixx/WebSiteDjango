@@ -12,7 +12,6 @@
     <link rel="stylesheet" href="{% static 'css/media.css' %}" type="text/css">
     <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" type="text/css">
     <link rel="shortcut icon" href="{% static 'siteHomePage/images/favicon.png' %}" type="image/png">
-    <script src="https://kit.fontawesome.com/c9bb692bee.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -22,10 +21,14 @@
         <div class="header__content">
             <div class="container-custom">
                 <div class="header__logo">
-                    <a href="/"><img src="{% static 'siteHomePage\images\logo.png' %}"></a>
+                    <a href="/"><img class="desktop" src="{% static 'siteHomePage\images\logo.png' %}">
+                        <img class="mobile" src="{% static 'siteHomePage\images\logo_small.png' %}"></a>
                 </div>
                 <div class="header-nav-button-align">
                     <nav class="header_menu">
+                        <div class="header__btn-menu">
+                            <span><i class="fas fa-bars fa-lg"></i></span>
+                        </div>
                         <ul>
                             <li><a href="/"><i
                                         class="fas fa-home fa-xs {% if request.path == '/' %}active{% endif %}"></i>ГЛАВНАЯ</a>
@@ -48,20 +51,29 @@
             </div>
         </div>
         <div class="header__bottom">
-            <div class="container-custom">
+            <div class="container-custom-bottom">
                 <div class="header_info_content">
+
                     <div class="header_social">
+
                         <div class="header__social-web">
-                            <span><i class="fas fa-clock fa-lg"></i></span>
-                            <span>Работаем пн-пт с 8:00 до 18:00</span>
+                            <span class="tooltiptext-btn">Работаем пн-пт с 8:00 до 18:00</span>
+                            <span class="header__social-web-small"><i class="fas fa-clock fa-2x"></i></span>
+
+                            <span class="header__social-web-big"><i class="fas fa-clock fa-lg"></i></span>
+                            <span class="header__social-web-big">Работаем пн-пт с 8:00 до 18:00</span>
                         </div>
                         <div class="header__social-web">
-                            <span><i class="fas fa-envelope fa-lg"></i></span>
-                            <span>Пишите: auto@service44.com</span>
+                            <span class="tooltiptext-btn">Пишите: auto@service44.com</span>
+                            <span class="header__social-web-small"><i class="fas fa-envelope fa-2x"></i></span>
+
+                            <span class="header__social-web-big"><i class="fas fa-envelope fa-lg"></i></span>
+                            <span class="header__social-web-big">Пишите: auto@service44.com</span>
                         </div>
                         <div class="header__social-web">
-                            <span class="header__phone"><i class="fas fa-phone-square-alt fa-lg"></i></span>
-                            <a href="tel:79607386319">Звоните: 7 960-738-63-19</a>
+                            <span class="header__phone header__social-web-big"><i class="fas fa-phone-square-alt fa-lg"></i></span>
+                            <a class="header__social-web-big" href="tel:79607386319">Звоните: 7 960-738-63-19</a>
+                            <a class="header__social-web-small" href="tel:79607386319"><i class="fas fa-phone-square-alt fa-2x"></i></a>
                         </div>
                     </div>
                     <div class="goog-toolbar-separator" aria-disabled="true" role="separator" style="user-select: none;">
@@ -147,16 +159,14 @@
                                 <p><i class="fas fa-phone-alt fa-sm"></i>8-960-738-63-19</p>
                             </div>
                         </div>
-                        <div class="finder__item">
-                            <div class="finder__item-btn">
-                                <button class="finder__item-link" type="button" data-toggle="modal" data-target="#feedbackModal">Форма обратной связи</button>
-                            </div>
+                        <div class="finder__item-btn">
+                            <button class="finder__item-link" type="button" data-toggle="modal" data-target="#feedbackModal">Форма обратной связи</button>
                         </div>
                         <div class="finder__items-line"></div>
                     </div>
                     <div class=finder__point-map>
                         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2128.716610021613!2d40.950541316106296!3d57.75523584325449!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46ad502794ccb5ab%3A0x5254893fbc8338d0!2z0JrQvtGB0YLRgNC-0LzRgdC60L7QuSDRgtC10YXQvdC-0LvQvtCz0LjRh9C10YHQutC40Lkg0YLQtdGF0L3QuNC60YPQvA!5e0!3m2!1sru!2sru!4v1590353335521!5m2!1sru!2sru"
-                            width="550" height="320" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+                            height="320" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
                     </div>
                 </div>
             </div>
@@ -168,7 +178,7 @@
         <div class="container-footer">
             <div class="container__footer-content">
                 <div class="footer__items">
-                    <div class="footer__item">
+                    <div class="footer__item-logo-outer">
 
                         <div class="footer__item-logo">
                         </div>
@@ -271,6 +281,8 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js" integrity="sha256-GaKOLXTn7uJXFuWp57ukQZGuKK2gWZWlEH16hc6jBU8=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/c9bb692bee.js" crossorigin="anonymous"></script>
+    <script src="{% static 'js/main.js' %}"></script>
 
 </body>
 
