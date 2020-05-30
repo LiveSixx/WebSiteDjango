@@ -1,4 +1,4 @@
-{% extends "siteHomePage/wrapper.html" %} {% block title %}Автосервис - Главная{% endblock %} {% block body %}
+{% extends "siteHomePage/wrapper.html" %} {% block title %}Автосервис - Главная {% endblock %} {% block body %}
 <section class="services">
     <div class="container-services">
         <div class="services__line-up"></div>
@@ -12,54 +12,25 @@
             </div>
         </div>
         <div class="services__items">
+            {% if services_list_home_page %} {% for b in services_list_home_page %}
             <div class="services__item">
                 <div class="services__item-padding">
                     <div class="services__item-vertical-line">
                         <div class="services__item-title">
-                            <span><i class="fas fa-star"></i>Шиномонтаж </span>
+                            <span><i class="fas fa-star"></i>{{b.service_item_title}} </span>
                         </div>
                         <div class="services__item-line"></div>
                         <div class="services__item-text">
-                            <p>Шиномонтаж и балансировка колёс в тёплом боксе и на современном оборудовании.</p>
+                            <p>{{b.service_item_text_title}}</p>
                         </div>
                         <div class="services__item-btn">
-                            <a href="#" class="services__item-link">Подробнее <i class="fas fa-angle-double-right fa-xs"></i></a>
+                            <a href="{{b.service_item_url_home_page}}" class="services__item-link">Подробнее <i class="fas fa-angle-double-right fa-xs"></i></a>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="services__item">
-                <div class="services__item-padding">
-                    <div class="services__item-vertical-line">
-                        <div class="services__item-title">
-                            <span><i class="fas fa-star"></i>Шиномонтаж </span>
-                        </div>
-                        <div class="services__item-line"></div>
-                        <div class="services__item-text">
-                            <p>Шиномонтаж и балансировка колёс в тёплом боксе и на современном оборудовании.</p>
-                        </div>
-                        <div class="services__item-btn">
-                            <a href="#" class="services__item-link">Подробнее <i class="fas fa-angle-double-right fa-xs"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="services__item">
-                <div class="services__item-padding">
-                    <div class="services__item-vertical-line">
-                        <div class="services__item-title">
-                            <span><i class="fas fa-star"></i>Шиномонтаж </span>
-                        </div>
-                        <div class="services__item-line"></div>
-                        <div class="services__item-text">
-                            <p>Шиномонтаж и балансировка колёс в тёплом боксе и на современном оборудовании.</p>
-                        </div>
-                        <div class="services__item-btn">
-                            <a href="#" class="services__item-link">Подробнее <i class="fas fa-angle-double-right fa-xs"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            {% endfor %} {% else %} {% endif %}
+
         </div>
         <div class="services__line-down">
         </div>
@@ -82,50 +53,19 @@
             </div>
         </div>
         <div class="advantages__items">
+            {% if advantage_list_home_page %} {% for a in advantage_list_home_page %}
             <div class="advantages__item">
-                <div class="advantages__item-icon"><i class="fas fa-user-tie fa-10x"></i></div>
+                <div class="advantages__item-icon"><i class="{{a.advantage_item_icon}}"></i></div>
                 <div class="advantages_item-padding">
                     <div class="advantages__item-title">
-                        <span>Высококлассные специалисты</span>
+                        <span>{{a.advantage_item_title_home_page}}</span>
                     </div>
                     <div class="advantages__item-text">
-                        <p>Каждый наш сотрудник – квалифицированный специалист, который способен выполнить сервисные работы любой сложности</p>
+                        <p>{{a.advantage_item_text_home_page}}</p>
                     </div>
                 </div>
             </div>
-            <div class="advantages__item">
-                <div class="advantages__item-icon"><i class="fas fa-user-tie fa-10x"></i></div>
-                <div class="advantages_item-padding">
-                    <div class="advantages__item-title">
-                        <span>Высококлассные специалисты</span>
-                    </div>
-                    <div class="advantages__item-text">
-                        <p>Каждый наш сотрудник – квалифицированный специалист, который способен выполнить сервисные работы любой сложности</p>
-                    </div>
-                </div>
-            </div>
-            <div class="advantages__item">
-                <div class="advantages__item-icon"><i class="fas fa-user-tie fa-10x"></i></div>
-                <div class="advantages_item-padding">
-                    <div class="advantages__item-title">
-                        <span>Высококлассные специалисты</span>
-                    </div>
-                    <div class="advantages__item-text">
-                        <p>Каждый наш сотрудник – квалифицированный специалист, который способен выполнить сервисные работы любой сложности</p>
-                    </div>
-                </div>
-            </div>
-            <div class="advantages__item">
-                <div class="advantages__item-icon"><i class="fas fa-user-tie fa-10x"></i></div>
-                <div class="advantages_item-padding">
-                    <div class="advantages__item-title">
-                        <span>Высококлассные специалисты</span>
-                    </div>
-                    <div class="advantages__item-text">
-                        <p>Каждый наш сотрудник – квалифицированный специалист, который способен выполнить сервисные работы любой сложности</p>
-                    </div>
-                </div>
-            </div>
+            {% endfor %} {% else %} {% endif %}
         </div>
         <div class="advantages__line-down">
         </div>
@@ -144,62 +84,30 @@
             </div>
         </div>
         <div class="latest-reviews__items">
+            {% if reviews_list_home_page %} {% for m in reviews_list_home_page %}
             <div class="latest-reviews__item">
                 <div class="latest-reviews__item-padding">
                     <div class="latest-reviews__item-header">
                         <div class="latest-reviews__item-title">
-                            <span>Васильев Артем</span>
+                            <span>{{m.name_review}}</span>
                         </div>
                         <div class="latest-reviews__date">
-                            <span>Дата: 19.03.1999 </span>
+                            <span>{{m.time_pub_review}}</span>
                         </div>
                     </div>
                     <div class="latest-reviews__item-line-up"></div>
                     <div class="latest-reviews__item-text">
-                        <p>Шиномонтаж и балансировка колёс в тёплом боксе и на современном оборудовании.</p>
+                        <p>{{m.body_review}}</p>
                     </div>
                     <div class="latest-reviews__item-line-down"></div>
                 </div>
             </div>
-            <div class="latest-reviews__item">
-                <div class="latest-reviews__item-padding">
-                    <div class="latest-reviews__item-header">
-                        <div class="latest-reviews__item-title">
-                            <span>ПЕТРОВИЧ</span>
-                        </div>
-                        <div class="latest-reviews__date">
-                            <span>Дата: 19.03.1999 </span>
-                        </div>
-                    </div>
-                    <div class="latest-reviews__item-line-up"></div>
-                    <div class="latest-reviews__item-text">
-                        <p>Шиномонтаж и балансировка колёс в тёплом боксе и на современном оборудовании.</p>
-                    </div>
-                    <div class="latest-reviews__item-line-down"></div>
-                </div>
-            </div>
-            <div class="latest-reviews__item">
-                <div class="latest-reviews__item-padding">
-                    <div class="latest-reviews__item-header">
-                        <div class="latest-reviews__item-title">
-                            <span>Васильев Артем</span>
-                        </div>
-                        <div class="latest-reviews__date">
-                            <span>Дата: 19.03.1999 </span>
-                        </div>
-                    </div>
-                    <div class="latest-reviews__item-line-up"></div>
-                    <div class="latest-reviews__item-text">
-                        <p>Шиномонтаж и балансировка колёс в тёплом боксе и на современном оборудовании.</p>
-                    </div>
-                    <div class="latest-reviews__item-line-down"></div>
-                </div>
-            </div>
+            {% endfor %} {% else %}{% endif%}
         </div>
         <div class="latest-reviews__line-down">
         </div>
         <div class="latest-reviews__btn">
-            <button class="latest-reviews__btn-link" type="button" data-toggle="modal" data-target="#reviewModal">Оставить отзыв</a>
+            <a href="/reviews" class="latest-reviews__btn-link">Оставить отзыв</a>
         </div>
     </div>
 </section>

@@ -11,73 +11,41 @@
             </div>
         </div>
         <div class="reviews__info-items">
+            {% if reviews_list %} {% for j in reviews_list %}
             <div class="reviews__info-item-wrapper-blue">
                 <div class="reviews__info-item">
                     <div class="reviews__info-item-title">
-                        <span>Андрей</span>
+                        <span>{{j.name_review}}</span>
                     </div>
                     <div class="reviews__info-item-date">
-                        <span>дата 19.03.1999</span>
+                        <span>{{j.time_pub_review}}</span>
                     </div>
 
                 </div>
                 <div class="reviews__about-line-separator"></div>
                 <div class="reviews__info-item-addon">
-                    <p>Обслуживаюсь в данном сервисе более 3х лет. Запчасти подбирают и доставляют быстро. К качеству ремонта вопросов никогда не возникало. Цена-качество на высоте. Так же в данном сервисе работает очень грамотный электрик, в 100% случаев
-                        определяет неисправность. Рекомендую!</p>
+                    <p>{{j.body_review}}</p>
                 </div>
-            </div>
-            <div class="reviews__info-item-wrapper-blue">
-                <div class="reviews__info-item">
-                    <div class="reviews__info-item-title">
-                        <span>Максим</span>
-                    </div>
-                    <div class="reviews__info-item-date">
-                        <span>дата 19.03.2020</span>
-                    </div>
 
-                </div>
-                <div class="reviews__about-line-separator"></div>
-                <div class="reviews__info-item-addon">
-                    <p>Обслуживаюсь в данном сервисе более 3х лет.</p>
+            </div>
+            {% endfor %} {% else %}
+            <div class="services__info-items-empty">
+                <div class="services__info-item-wrapper-empty"><span>Отзывы отсутствуют ¯\_(ツ)_/¯</span>
                 </div>
             </div>
-            <div class="reviews__info-item-wrapper-blue">
-                <div class="reviews__info-item">
-                    <div class="reviews__info-item-title">
-                        <span>Андрей</span>
-                    </div>
-                    <div class="reviews__info-item-date">
-                        <span>дата 19.03.1999</span>
-                    </div>
-
-                </div>
-                <div class="reviews__about-line-separator"></div>
-                <div class="reviews__info-item-addon">
-                    <p>Обслуживаюсь в данном сервисе более 3х лет. Запчасти подбирают и доставляют быстро. К качеству ремонта вопросов никогда не возникало. Цена-качество на высоте. Так же в данном сервисе работает очень грамотный электрик, в 100% случаев
-                        определяет неисправность. Рекомендую!</p>
-                </div>
-            </div>
+            {% endif%}
         </div>
 </section>
 <section class="reviews__form">
     <div class="container-services">
-        <div class="reviews__reviews-btn">
-            <button class="reviews__reviews-btn-link" type="button" data-toggle="modal" data-target="#reviewModal">Оставить отзыв</button>
-        </div>
         <div class="reviews__form-content-align">
-            <form>
+            <form method="post">
                 <div class="reviews__form-box-inner">
                     <div class="reviews__form-box-title"><span>Оставить отзыв</span></div>
-                    <label>
-                            <input maxlength="45" type="text" placeholder="Имя">
-                        </label>
-                    <label>
-                            <input maxlength="45" type="text" placeholder="Почта">
-                        </label>
-                    <label>
-                            <textarea maxlength="250"  placeholder="Отзыв"></textarea>
-                        </label>
+                    {% csrf_token %} {{formReview.name_review.errors}}
+                    <label for="{{ form.name.id_for_label }}">{{formReview.name_review}}</label> {{formReview.email_review.errors}}
+                    <label for="{{ form.phone.id_for_label }}">{{formReview.email_review}}</label> {{formReview.body_review.errors}}
+                    <label for="{{ form.body.id_for_label }}">{{formReview.body_review}}</label>
                     <button class="feedback__form-box-btn" type="submit">Отправить</button>
                 </div>
             </form>

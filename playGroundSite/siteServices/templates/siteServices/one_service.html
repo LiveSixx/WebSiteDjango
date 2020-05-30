@@ -1,4 +1,4 @@
-{% extends "siteHomePage/wrapper.html" %} {% block title %}Автосервис - Наши услуги{% endblock %} {% block body %} {% load static %}
+{% extends "siteHomePage/wrapper.html" %} {% block title %}Автосервис - {{service.service_item_title}}{% endblock %} {% block body %} {% load static %}
 <section class="services-about">
     <div class="container-services">
         <div class="about__about-one-service">
@@ -6,11 +6,11 @@
                 <a href="/services/"><i class="fas fa-angle-double-left fa-lg"></i> Вернуться назад</a>
             </div>
             <div class="about__about-title-one-service">
-                <span>Химчистка автомобиля</span>
+                <span>{{service.service_item_title}}</span>
             </div>
             <div class="about__about-line-one-service"></div>
             <div class="about__about-text">
-                <p>Полная химчистка салона, частичная химчистка салона
+                <p>{{service.service_item_text_title}}
                 </p>
             </div>
         </div>
@@ -21,10 +21,7 @@
                 </div>
                 <div class="about__info-item-text">
                     <div class="about__info-item-text-content">
-                        <p>Аккуратный, ухоженный салон позволит всем, находящимся в машине, почувствовать себя максимально комфортно и создаст самое благоприятное впечатление о самом автовладельце. Чтобы добиться наилучшего эффекта, целесообразно воспользоваться
-                            услугой по химчистке салона, которая выполняется в самые краткие сроки. Безусловно, главная цель чистки салона – убрать видимые загрязнения и освежить внешний вид. Комплексная химчистка справляется с этой задачей на “отлично”,
-                            очищая все труднодоступные места и обновляя внешние поверхности салона, потолка и сидений (вне зависимости от того, из какого материала они изготовлены). Наши мастера используют экологически чистые моющие средства и ароматизаторы,
-                            которые безопасны для человека и не вызывают аллергических реакций.
+                        <p>{{service.service_item_text}}
                         </p>
                     </div>
                 </div>
@@ -34,7 +31,7 @@
                     <div class="about__info-item-title-one-service">
                         <span>Стоимость</span>
                     </div>
-                    <div class="about__info-item-addon-one-service"><span>450 рублей</span>
+                    <div class="about__info-item-addon-one-service"><span>{{service.service_item_price}}</span>
                     </div>
                 </div>
 
@@ -46,7 +43,7 @@
                 </div>
                 <div class="about__info-item-text">
                     <div class="about__info-item-text-content">
-                        <p>Текст дополнительной информации</p>
+                        <p>{{service.service_item_additional_info}}</p>
                     </div>
 
                 </div>

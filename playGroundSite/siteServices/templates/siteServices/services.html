@@ -11,33 +11,27 @@
             </div>
         </div>
         <div class="services__info-items">
+            {% if services_list %} {%for a in services_list %}
             <div class="services__info-item-wrapper">
-                <div class="services__info-item">
-                    <a href="#">
-                        <div class="services__info-item-title">
-                            <span>Название услуги</span>
-                            <span>Подробнее <i class="fas fa-angle-double-right fa-sm"></i></span>
-                        </div>
-
-                    </a>
-                </div>
-                <div class="services__info-item-addon"><span>Дополнительная информация услуги</span>
+                <a href="{% url 'siteServices:service_detail' a.id %}">
+                    <div class="services__info-item-title">
+                        <span>{{a.service_item_title}}</span>
+                        <span>Подробнее <i class="fas fa-angle-double-right fa-sm"></i></span>
+                    </div>
+                </a>
+                <div class="services__info-item-addon"><span>{{a.service_item_additional_info}}</span>
                 </div>
             </div>
-            <div class="services__info-item-wrapper">
-                <div class="services__info-item">
-                    <a href="#">
-                        <div class="services__info-item-title">
-                            <span>Название услуги</span>
-                            <span>Подробнее <i class="fas fa-angle-double-right fa-sm"></i></span>
-                        </div>
 
-                    </a>
-                </div>
-                <div class="services__info-item-addon"><span>Дополнительная информация услуги</span>
-                </div>
+            {% endfor %}
+        </div>
+        {% else %}
+        <div class="services__info-items-empty">
+            <div class="services__info-item-wrapper-empty"><span>Услуг нет ¯\_(ツ)_/¯</span>
             </div>
         </div>
+        {% endif%}
+    </div>
 </section>
 <section class="feedback__form">
     <div class="container-services">

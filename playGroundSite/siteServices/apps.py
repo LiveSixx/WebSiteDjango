@@ -2,4 +2,6 @@ from django.apps import AppConfig
 
 
 class SiteservicesConfig(AppConfig):
-    name = 'siteServices'
+    name = 'siteService'
+    verbose_name = 'Услуги на сайте'
+

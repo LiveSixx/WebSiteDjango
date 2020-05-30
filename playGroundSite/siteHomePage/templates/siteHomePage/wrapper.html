@@ -45,7 +45,8 @@
                         </ul>
                     </nav>
                     <div class="header_review_btn">
-                        <button class="review_btn" type="button" data-toggle="modal" data-target="#reviewModal">Оставить отзыв</button>
+                        <a href="/reviews" class="review_btn">Оставить отзыв</a>
+                        <!-- <button class="review_btn" type="button" data-toggle="modal" data-target="#reviewModal">Оставить отзыв</button> -->
                     </div>
                 </div>
             </div>
@@ -257,18 +258,14 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="feedback__form-content-align">
-                    <form>
+                    <form method="post">
+
                         <div class="feedback__form-box-inner">
                             <div class="feedback__form-box-title"><span>Оставьте сообщение и мы с вами свяжемся</span></div>
-                            <label>
-                                        <input maxlength="45" type="text" placeholder="ФИО">
-                                    </label>
-                            <label>
-                                        <input maxlength="45" type="text" placeholder="Контактный Телефон">
-                                    </label>
-                            <label>
-                                        <textarea maxlength="250"  placeholder="Вопрос (максимум 250 символов)"></textarea>
-                                    </label>
+                            {% csrf_token %} {{form.name.errors}}
+                            <label for="{{ form.name.id_for_label }}">{{form.name}}</label> {{form.phone.errors}}
+                            <label for="{{ form.phone.id_for_label }}">{{form.phone}}</label> {{form.body.errors}}
+                            <label for="{{ form.body.id_for_label }}">{{form.body}}</label>
                             <button class="feedback__form-box-btn" type="submit">Отправить</button>
                         </div>
                     </form>

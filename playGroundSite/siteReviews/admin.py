@@ -1,3 +1,7 @@
 from django.contrib import admin
 
-# Register your models here.
+from .models import SnippetReview
+
+@admin.register(SnippetReview)
+class SnippetReviewAdmin(admin.ModelAdmin):
+    list_display = ('name_review', 'email_review', 'body_review')
