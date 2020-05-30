@@ -22,6 +22,6 @@ def service_detail(request, service_id):
     try:
         a = SiteService.objects.get(id = service_id)
     except:
-        raise Http404("Такой услуги не существует!")
+        raise Http404("Такой услуги не существует")
     return render(request, 'siteServices/one_service.html', {'service': a, 'form':form})
 
